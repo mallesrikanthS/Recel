@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import * as XLSX from "xlsx";
+import {ExcelRenderer, OutTable} from 'react-excel-renderer';
+import { exportDefaultSpecifier } from "@babel/types";
+import SheetRead from './components/SheetRead';
+import ShRead from './components/SheRead';
+import ListItem from './components/ListItem';
+import GridView from './components/GridView';
+//import AddDrop from "./components/AddDrop";
+import AddDrop from "./Drop/AddDrop";
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      
+      <div className='.container'>
+      <div>
+        <AddDrop />
+      </div>
+      
+      <div className='row' >
+      <GridView />
+      </div>
+      </div>
+      
+      
     </div>
   );
 }
